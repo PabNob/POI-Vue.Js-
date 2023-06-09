@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css3?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+
+    <title>Par ou Ímpar (Vue.JS)</title>
+</head>
+<body>
+    <div id="app">
+      <section class="blocoGrande">
+
+        <section class="blocoA">
+
+          <h1>Par ou Ímpar</h1>
+
+          <div id="POI">
+
+            <div class="PI">
+              <input 
+              type="radio" 
+              id="opcao1" 
+              name="opcao" 
+              value="Par" 
+              v-model="choice"
+              />
+              <label for="Par">Par</label>
+            </div>
+
+            <div class="PI">
+              <input 
+              type="radio" 
+              id="opcao2" 
+              name="opcao" 
+              value="Ímpar" 
+              v-model="choice"
+              />
+              <label for="Ímpar">Ímpar</label>
+            </div>
+
+          </div>
+
+          <div class="input-container">
+            <label for="num-jogador">Escolha um número:</label>
+            <input 
+            type="number" 
+            v-model="numjogador" 
+            id="num-jogador" 
+            min="1" 
+            max="9" 
+            />
+          </div>
+
+          <button @click="play">Jogar</button>
+
+        </section>
+        
+        <section class="blocoB">
+          <h1>Resultado Final</h1>
+          <h2>{{ result }}</h2>
+        </section>
+              
+      </section>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
